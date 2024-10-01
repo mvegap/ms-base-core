@@ -1,4 +1,4 @@
-# ms-eventmax-core
+# ms-base-core
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
