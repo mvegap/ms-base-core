@@ -1,0 +1,31 @@
+version: '3'
+services:
+  database:
+    container_name: database
+    image: mysql:latest
+    restart: on-failure
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=eventmax
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - $HOME/docker/volumes/node_mysql/:/var/lib/mysql/
+  microservice:
+    container_name: backend
+    image: microservice
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: deploy
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+
+volumes:
+  db-data:
+    driver: local

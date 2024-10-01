@@ -1,0 +1,9 @@
+export const KEY_PERSONS = 'persons';
+export const KEY_BUSINESS = 'business';
+export const KEY_ENROLLMENTS = 'enrollments';
+export const KEY_EVENTS = 'events';
+export const KEY_EVENTGROUPS = 'event_groups';
+export const KEY_GUESTS = 'guests';
+export const KEY_INVOICES = 'invoices';
+export const KEY_PAYMENT_TYPES = 'payment_types';
+export const CACHE_EXPIRATION = 60000;
